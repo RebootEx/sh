@@ -152,26 +152,29 @@ git clone https://github.com/robertdavidgraham/masscan
 cd masscan
 make -j
 
-cd /root
-mkdir /root/sh
-rm -r /root/sh
-git clone https://github.com/RebootEx/sh ; chmod 777 sh/*
 
-screen -dmS $"ex_db"
-cmd=$"bash /root/sh/exploit.sh"
-screen -x -S ex_db -X stuff "$cmd"
-screen -x -S ex_db -X stuff $'\n'
+echo "Done ...:)"
 
-bash sh/one.sh
-cd /root ; rm -r sh
+# cd /root
+# mkdir /root/sh
+# rm -r /root/sh
+# git clone https://github.com/RebootEx/sh ; chmod 777 sh/*
+
+# screen -dmS $"ex_db"
+# cmd=$"bash /root/sh/exploit.sh"
+# screen -x -S ex_db -X stuff "$cmd"
+# screen -x -S ex_db -X stuff $'\n'
+
+# bash sh/one.sh
+# cd /root ; rm -r sh
 
 
-while true
-do
-cd /root
-mkdir /root/sh
-rm -r /root/sh
-git clone https://github.com/RebootEx/sh ; chmod 777 sh/*
-bash sh/one.sh
-cd /root ; rm -r sh
-done
+# while true
+# do
+# cd /root
+# mkdir /root/sh
+# rm -r /root/sh
+# git clone https://github.com/RebootEx/sh ; chmod 777 sh/*
+# bash sh/one.sh
+# cd /root ; rm -r sh
+# done
