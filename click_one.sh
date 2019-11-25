@@ -15,30 +15,30 @@ var=$(ruby -v|grep -oP ".\..\..")
 cd /etc/alternatives
 ln -sf /usr/bin/ruby$var ruby
 
-cd /root
-var=$(curl -L golang.org/dl/|grep -oP "(?<=\<a\ class\=\"download\ downloadBox\"\ href\=\").*?(?=linux\-amd64\.tar\.gz\"\>)") ; last=linux-amd64.tar.gz ; var=$var$last ; wget $var
-load=${var//https\:\/\/dl\.google\.com\/go\//} ; tar -xzf $load -C /usr/local ; rm $load
-echo 'export EDITOR=nano'>>/root/.profile
-echo 'export GOROOT=/usr/local/go'>>/root/.profile
-mkdir /root/GOPATH
-echo 'export GOPATH=/root/GOPATH'>>/root/.profile
-echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin'>>/root/.profile
-source /root/.profile
+# cd /root
+# var=$(curl -L golang.org/dl/|grep -oP "(?<=\<a\ class\=\"download\ downloadBox\"\ href\=\").*?(?=linux\-amd64\.tar\.gz\"\>)") ; last=linux-amd64.tar.gz ; var=$var$last ; wget $var
+# load=${var//https\:\/\/dl\.google\.com\/go\//} ; tar -xzf $load -C /usr/local ; rm $load
+# echo 'export EDITOR=nano'>>/root/.profile
+# echo 'export GOROOT=/usr/local/go'>>/root/.profile
+# mkdir /root/GOPATH
+# echo 'export GOPATH=/root/GOPATH'>>/root/.profile
+# echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin'>>/root/.profile
+# source /root/.profile
 
-wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz
-tar zxvf Python-3.6.9.tgz && rm -rf Python-3.6.9.tgz
-cd Python-3.6.9
-./configure --enable-loadable-sqlite-extensions ; make ;  make install
-apt install -q -y python3-pip
-rm -rf /usr/bin/python3
-rm -rf /usr/bin/pip3
-ln -s /usr/local/bin/python3.6 /usr/bin/python3
-ln -s /usr/local/bin/pip3.6 /usr/bin/pip3
+# wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz
+# tar zxvf Python-3.6.9.tgz && rm -rf Python-3.6.9.tgz
+# cd Python-3.6.9
+# ./configure --enable-loadable-sqlite-extensions ; make ;  make install
+# apt install -q -y python3-pip
+# rm -rf /usr/bin/python3
+# rm -rf /usr/bin/pip3
+# ln -s /usr/local/bin/python3.6 /usr/bin/python3
+# ln -s /usr/local/bin/pip3.6 /usr/bin/pip3
 
-yes|apt install python-pip
-rm /usr/bin/lsb_release
-python3 -m pip install --upgrade pip
-python -m pip install --upgrade pip
+# yes|apt install python-pip
+# rm /usr/bin/lsb_release
+# python3 -m pip install --upgrade pip
+# python -m pip install --upgrade pip
 #wget https://bootstrap.pypa.io/get-pip.py
 #python get-pip.py
 #rm -r get-pip.py
