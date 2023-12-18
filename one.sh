@@ -9,7 +9,6 @@ mkdir /root/script/domains_Github/0_subdomain;cd /root/script/domains_Github/0_s
 mkdir /root/watch;touch /root/watch/1.txt
 
 
-
 #wildcards.txt
 cd /root/script/0_subdomain/massdns/scripts ; bash get-resolvers.sh
 
